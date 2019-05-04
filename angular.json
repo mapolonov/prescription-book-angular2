@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "prescription-book": {
+    "Breakdown-book": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/prescription-book",
+            "outputPath": "dist/Breakdown-book",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "prescription-book:build"
+            "browserTarget": "Breakdown-book:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "prescription-book:build:production"
+              "browserTarget": "Breakdown-book:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "prescription-book:build"
+            "browserTarget": "Breakdown-book:build"
           }
         },
         "test": {
@@ -108,7 +108,7 @@
         }
       }
     },
-    "prescription-book-e2e": {
+    "Breakdown-book-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -117,11 +117,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "prescription-book:serve"
+            "devServerTarget": "Breakdown-book:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "prescription-book:serve:production"
+              "devServerTarget": "Breakdown-book:serve:production"
             }
           }
         },
@@ -137,5 +137,5 @@
       }
     }
   },
-  "defaultProject": "prescription-book"
+  "defaultProject": "Breakdown-book"
 }
