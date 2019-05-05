@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Breakdown-book';
   name = 'Max';
+  loadedFeature = 'breakdowns';
+
+  onNavigate(feature: string) {
+    this.loadedFeature = feature;
+  }
 }
