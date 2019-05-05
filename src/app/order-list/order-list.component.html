@@ -2,6 +2,13 @@
   <div class="col-xs-10">
     <app-order-edit></app-order-edit>
     <hr>
-    <p>The order list</p>
+    <ul class="list-group">
+      <a 
+        class="list-group-item" 
+        style="cursor: pointer;"
+        *ngFor="let action of repairActions">
+        {{ action.name }} (take {{action.time}} hours, cost {{action.cost}} EUR)
+      </a>
+    </ul>
   </div>
 </div>
