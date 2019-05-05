@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Breakdown } from '../breakdown.model';
 
 @Component({
@@ -8,10 +8,14 @@ import { Breakdown } from '../breakdown.model';
 })
 export class BreakdownItemComponent implements OnInit {
   @Input() breakdown: Breakdown;
+  @Output() breakdownSelected = new EventEmitter<void>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  onSelected() {
+    this.breakdownSelected.emit();
+  }
 }

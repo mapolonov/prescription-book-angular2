@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Breakdown } from './breakdown-list/breakdown.model';
 
 @Component({
   selector: 'app-breakdowns',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./breakdowns.component.sass']
 })
 export class BreakdownsComponent implements OnInit {
+  selectedBreakdown: Breakdown;
 
   constructor() { }
 

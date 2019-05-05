@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Breakdown } from './breakdown.model';
 
 @Component({
@@ -7,6 +7,8 @@ import { Breakdown } from './breakdown.model';
   styleUrls: ['./breakdown-list.component.sass']
 })
 export class BreakdownListComponent implements OnInit {
+
+  @Output() breakdownWasSelected = new EventEmitter<Breakdown>();
 
   breakdowns: Breakdown[]  = [
     new Breakdown('Wheel replacement', 'Wheel replacement description',
@@ -20,6 +22,10 @@ export class BreakdownListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onBreakdownSelected(breakdown: Breakdown) {
+    this.breakdownWasSelected.emit(breakdown);
   }
 
 }
