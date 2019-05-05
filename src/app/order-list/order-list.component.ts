@@ -18,4 +18,7 @@ export class OrderListComponent implements OnInit {
   ngOnInit() {
   }
 
+  onRepairActionAdded(repairAction: RepairAction) {
+    this.repairActions.push(repairAction);
+  }
 }
