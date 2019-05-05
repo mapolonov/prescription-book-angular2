@@ -10,6 +10,7 @@ import { BreakdownDetailComponent } from './breakdowns/breakdown-detail/breakdow
 import { BreakdownItemComponent } from './breakdowns/breakdown-list/breakdown-item/breakdown-item.component';
 import { OrderListComponent } from './order-list/order-list.component';
 import { OrderEditComponent } from './order-list/order-edit/order-edit.component';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { OrderEditComponent } from './order-list/order-edit/order-edit.component
     BreakdownDetailComponent,
     BreakdownItemComponent,
     OrderListComponent,
-    OrderEditComponent
+    OrderEditComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
