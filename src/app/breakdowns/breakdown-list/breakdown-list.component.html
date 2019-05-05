@@ -5,21 +5,11 @@
 </div>
 <hr>
 <div class="row">
-    <div class="col-xs-12">
-        <a href="#" class="list-group-item clearfix" *ngFor="let item of breakdowns">
-            <div class="pull-left">
-                <h4 class="list-group-item-heading">{{ item.name }}</h4>
-                <p class="list-group-item-text">{{ item.description }}</p>
-            </div>
-            <span class="pull-right">
-                <img 
-                    [src]="item.picturePath" 
-                    alt="{{ item.name }}" 
-                    class="img-responsive" 
-                    style="max-height: 50px;">
-            </span>
-        </a>
-        <app-breakdown-item></app-breakdown-item>
+    <div class="col-xs-12">        
+        <app-breakdown-item 
+            *ngFor="let breakdown of breakdowns" 
+            [breakdown]="breakdown">
+        </app-breakdown-item>
     </div>
 </div>
 
