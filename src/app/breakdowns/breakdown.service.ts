@@ -1,6 +1,7 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Breakdown } from './breakdown-list/breakdown.model';
 import { RepairAction } from '../shared/repair-action.model';
+import { OrderListService } from '../order-list/order-list.service';
 
 @Injectable({
   providedIn: 'root'
@@ -23,9 +24,13 @@ export class BreakdownService {
     [ new RepairAction('Diagnostic', 1, 1), new RepairAction('Electronic replace', 120, 2000) ])
   ];
 
-  constructor() { }
+  constructor(private orderListService: OrderListService) { }
 
   getBreakdowns() {
     return this.breakdowns.slice();
+  }
+
+  onAddActionsToOrderList(repairActions: RepairAction[]) {
+    this.orderListService.addRepairActions(repairActions);
   }
 }

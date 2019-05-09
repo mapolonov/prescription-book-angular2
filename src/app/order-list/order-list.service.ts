@@ -23,4 +23,9 @@ export class OrderListService {
     this.repairActions.push(repairAction);
     this.orderListChanged.emit(this.repairActions.slice());
   }
+
+  addRepairActions(repairActions: RepairAction[]) {
+    this.repairActions.push(...repairActions);
+    this.orderListChanged.emit(this.repairActions.slice());
+  }
 }
