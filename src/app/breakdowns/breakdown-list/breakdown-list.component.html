@@ -8,8 +8,7 @@
     <div class="col-xs-12">        
         <app-breakdown-item 
             *ngFor="let breakdownEl of breakdowns" 
-            [breakdown]="breakdownEl"
-            (breakdownSelected)="onBreakdownSelected(breakdownEl)">
+            [breakdown]="breakdownEl">
         </app-breakdown-item>
     </div>
 </div>

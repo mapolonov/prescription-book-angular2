@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RepairAction } from '../shared/repair-action.model';
+import { OrderListService } from './order-list.service';
 
 @Component({
   selector: 'app-order-list',
@@ -7,18 +8,16 @@ import { RepairAction } from '../shared/repair-action.model';
   styleUrls: ['./order-list.component.sass']
 })
 export class OrderListComponent implements OnInit {
+  repairActions: RepairAction[];
 
-  repairActions: RepairAction[] = [
-    new RepairAction('Checking', 1, 30),
-    new RepairAction('Export new mirror', 7, 500)
-  ];
-
-  constructor() { }
+  constructor(private orderListService: OrderListService) { }
 
   ngOnInit() {
-  }
-
-  onRepairActionAdded(repairAction: RepairAction) {
-    this.repairActions.push(repairAction);
+    this.repairActions = this.orderListService.getOrderList();
+    this.orderListService.orderListChanged.subscribe(
+      (repairActions: RepairAction[]) => {
+        this.repairActions = repairActions;
+      }
+    );
   }
 }

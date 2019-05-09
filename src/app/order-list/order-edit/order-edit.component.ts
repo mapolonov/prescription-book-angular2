@@ -1,5 +1,6 @@
-import { Component, OnInit, ElementRef, ViewChild, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { RepairAction } from 'src/app/shared/repair-action.model';
+import { OrderListService } from '../order-list.service';
 
 @Component({
   selector: 'app-order-edit',
@@ -11,9 +12,7 @@ export class OrderEditComponent implements OnInit {
   @ViewChild('timeInput') timeInputRef: ElementRef;
   @ViewChild('costInput') costInputRef: ElementRef;
 
-  @Output() repairActionAdded = new EventEmitter<RepairAction>();
-
-  constructor() { }
+  constructor(private orderListService: OrderListService) { }
 
   ngOnInit() {
   }
@@ -25,7 +24,6 @@ export class OrderEditComponent implements OnInit {
 
     const newRepairAction = new RepairAction(name, time, cost);
 
-    this.repairActionAdded.emit(newRepairAction);
+    this.orderListService.addRepairAction(newRepairAction);
   }
-
 }
